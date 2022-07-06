@@ -21,7 +21,7 @@ ffmpeg usage examples
 `ffmpeg -i input.mp4 -i zvuk.mp3 -vcodec copy -acodec copy output.mp4`
 
 ## mov to mp4 with quality preservation
-'ffmpeg -i 'input.mov' -q:v 1 output.mp4'
+`ffmpeg -i 'input.mov' -q:v 1 output.mp4`
 - -q:v n, 1 < n < 31, 1 - the highest quality
 
 ## Photo banner for audio
