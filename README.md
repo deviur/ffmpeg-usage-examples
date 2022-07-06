@@ -2,7 +2,7 @@
 ffmpeg usage examples
 
 ## Install
-'sudo apt install ffmpeg'
+`sudo apt install ffmpeg`
 
 ## Cut a piece from the video
 `ffmpeg -i input.mp4 -ss 00:00:50 -codec copy -t 50 output.mp4`,
