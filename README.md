@@ -33,3 +33,6 @@ ffmpeg usage examples
 
 ## Two videos side by side
 `ffmpeg -i ' left.mp4' -i right.mp4 -filter_complex hstack -c:v libx264 output.mp4`
+
+## Speed up the video
+`ffmpeg -i 'input.webm' -vf  "setpts=0.25*PTS" output.webm`
