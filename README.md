@@ -36,3 +36,15 @@ ffmpeg usage examples
 
 ## Speed up the video
 `ffmpeg -i 'input.webm' -vf  "setpts=0.25*PTS" output.webm`
+
+## Split the video into equal parts
+### a bash example
+```shell
+#!/bin/bash
+for i in {00..09}
+do 
+    sec=$[${i#0} * 30]
+    echo "Секунды: $sec"
+    ffmpeg -i input.mp4 -ss $sec -t 29 -codec copy output_$i.mp4
+done
+```
