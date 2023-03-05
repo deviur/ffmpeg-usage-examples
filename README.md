@@ -45,6 +45,9 @@ for i in {00..09}
 do 
     sec=$[${i#0} * 30]
     echo "Секунды: $sec"
-    ffmpeg -i input.mp4 -ss $sec -t 29 -codec copy output_$i.mp4
+    ffmpeg -i input.mp4 -ss $sec -t 30 -codec copy output_$i.mp4
 done
 ```
+
+## Make a smooth transition from one photo to another
+`ffmpeg -loop 1 -i input#2.png -loop 1 -i input#3.png -filter_complex "[1:v][0:v]blend=all_expr='A*(if(gte(T,3),1,T/3))+B*(1-(if(gte(T,3),1,T/3)))'" -t 4 output.mp4`
